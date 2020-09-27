@@ -13,9 +13,7 @@
             <form action="http://fe.it-academy.by/TestForm.php"  method="GET" target="_blank">
             <fieldset>
                 <legend>Строка поиска</legend>
-                <input type="text"> <input type="submit" value="Искать">
-                <br>
-                
+                <input type="text"maxlength="10"> <input type="submit" value="Искать" ><br>
                 <input type="radio" name="radio" value="radio">на сайте
                 <input type="radio" name="radio" value="radio1">в google
                 <div><em>Длина запроса не более 10 символов</em></div>    
@@ -25,7 +23,7 @@
             <form action="http://fe.it-academy.by/TestForm.php"  method="GET" target="_blank">
                 <fieldset>
                     <legend>Строка поиска</legend>
-                    <input type="text">* <input type="submit" value="Искать">
+                    <input type="text" required autofocus>* <input type="submit" value="Искать">
                     <br>
                     
                     <input type="radio" name="radio" value="radio">на сайте
@@ -41,8 +39,8 @@
     <form action="http://fe.it-academy.by/TestForm.php" method="GET" target="_blank">
         <fieldset>
             <legend>Авторизируйтесь</legend>
-            <label><input type="text" name="Login">* Логин</label><br> 
-            <label><input type="text" name="Parol">* Пароль</label>
+            <label><input type="text" name="Login"required>* Логин</label><br> 
+            <label><input type="text" name="Parol"required>* Пароль</label>
             <br>
             
             <input type="checkbox">Оставаться в системе <br>
@@ -60,6 +58,7 @@
             <input type="radio" name="radio" value="radio1">неплохо <br>
             <input type="radio" name="radio" value="radio2">хорошо <br>
             <input type="radio" name="radio" value="radio3">супер <br>
+            <input type="hidden" name="date_voite" value="2013.12.31">
             <input type="submit" value="Отправить">
             <div><em>Есть скрытое поле</em></div>
             <div><em>name=date_voite, value="2013.12.31"</em></div>
@@ -70,11 +69,11 @@
     <tr>
         <td>
             <p><strong>Отзыв:</strong></p>
-    <form action="http://fe.it-academy.by/TestForm.php"  method="POST" target="_blank">
+    <form id="email" action="http://fe.it-academy.by/TestForm.php"  method="POST" target="_blank">
       <fieldset>
           <legend>Оставьте Ваш отзыв</legend>
-          <label><input type="text" name="name">* Имя</label><br> 
-          <label><input type="email" name="email">* e-mail</label><br>
+          <label><input type="text" name="name" required>* Имя</label><br> 
+          <label><input type="email" name="email" form="email" required>* e-mail</label><br>
           <textarea name="Submission form" lang="ru">Форма отправки</textarea><br>
           <input type="submit" value="Отправить">
           <div><em>* - обязательное поле</em></div>
@@ -112,13 +111,13 @@
     <tr>
         <td>
             <p><strong>Загрузка файла на сервер:</strong></p>
-    <form action="http://fe.it-academy.by/TestForm.php"  method="POST" target="_blank">
+    <form action="http://fe.it-academy.by/TestForm.php" enctype="multipart/form-data" method="POST" target="_blank">
     <fieldset>
         <legend>Upload</legend>
         <div>Файл:</div>
         <input type="file" name="file">
         <div>Срок хранения (года):</div>
-        <input type="text" multiple> <input type="submit" value="загрузить">
+        <input type="text"> <input type="submit" value="загрузить">
         <div><em>Метод POST</em></div>
         <div><em>В теге form используйте атрибут</em></div>
         <div><em>enctype="multipart/form-data" для отправки</em></div>
@@ -133,7 +132,7 @@
                 <legend>Строка поиска</legend>
                 <input type="text">
                 <div><em>Телефонный номер в формате</em></div>
-                <div><em>+ХХХ-ХХ-ХХХХХХХ, где Х - любое числоы</em></div>
+                <div><em>ХХХ-ХХ-ХХХХХХХ, где Х - любое числоы</em></div>
                 <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{7}"><br>
                 <input type="submit" value="Проверить">
             </fieldset>
